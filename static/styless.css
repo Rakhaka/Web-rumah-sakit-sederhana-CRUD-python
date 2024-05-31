@@ -1,0 +1,66 @@
+.login {
+  padding-top: 6rem;
+}
+
+#login-body {
+  height: 400px;
+}
+.close-button {
+  background-color: #89d1f3;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  align-items: end;
+}
+
+form {
+  border-radius: 20px;
+  margin-top: 8rem !important;
+  width: 640px !important;
+  background-color: #89d1f3 !important;
+  padding: 25px 50px 25px 50px;
+}
+.form-login {
+  border-radius: 20px;
+  margin-top: 8rem !important;
+  width: 350px !important;
+  background-color: #89d1f3 !important;
+  padding: 25px 50px 25px 50px;
+}
+#message-alert {
+  font-size: 15px;
+}
+
+#pesan,
+#login {
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+.form-group {
+  font-size: large;
+  /* font-weight: 900; */
+}
+.submit-button {
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 50px;
+  /* background: linear-gradient(90deg, rgb(33, 33, 33) 0%, rgb(114, 114, 114) 35%, rgb(226, 226, 226) 100%); */
+  background-color: #1560bd;
+}
+
+.form-control {
+  color: rgba(0, 0, 0, 0.87);
+  border-bottom-color: rgba(0, 0, 0, 0.42);
+  box-shadow: none !important;
+  border: none;
+  border-bottom: 1px solid;
+  border-radius: 4px 4px 0 0;
+}
+h4 {
+  font-size: 2rem !important;
+}

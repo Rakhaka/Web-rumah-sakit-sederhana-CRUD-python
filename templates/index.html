@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healing Hospital</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body class="home">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+      <div class="container">
+        <div class="logo">
+          <a href="#">
+        <img src="/static/img/logo.png" alt="">
+         
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </a>
+    </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#layanan">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#Menu">Pricelist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#Contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/login">Dasboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- Button scroll ke home -->
+<div class="scroll-button">
+    <a href="#home"></i></a>
+  </div>
+
+  <!-- Beranda  -->
+<section class="home" id="home">
+    <div class="home-content">
+      <div class="teks">
+        <div class="teks-satu"><img src="/static/img/T1.PNG"></div>
+        <div class="teks-dua"><img src="/static/img/T2.PNG"></div>
+        <div class="teks-empat">Perawatan Luar Biasa, Kesehatan yang Menjadi Prioritas Utama</div>
+      </div>
+      <div class="button">
+        <button>
+          <div class="teks-lima">
+          <a href="#Contact" style="text-decoration: none; color: whitesmoke;">Hubungi kami</a>
+          </div>
+        </button>
+        <div class="logoicon">
+        </br>
+      </div>
+    </div>
+  </section>
+  <!-- beranda end -->
+<!-- about -->
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title"><span>Tentang Healing Hospital</span></div>
+    <div class="about-details">
+      <div class="left">
+        <img src="/static/img/logo.png" alt="">
+      </div>
+      <div class="right">
+        <div class="topic"><b>Kenapa Harus Memilih kami?</b></div>
+        <p style="text-indent: 25px;"></p>
+        <p style="text-indent: 25px;">Healing Hospital menjadi pusat keunggulan dengan menyediakan dokter spesialis terbaik untuk menangani berbagai jenis penyakit. Rumah sakit ini memastikan pelayanan mereka memenuhi standar tertinggi dan meningkatkan mutu layanan secara keseluruhan. Selain itu, Healing Hospital juga menyediakan layanan konsultasi online, layanan medis di rumah, perawatan pribadi, perawatan luka, dan pengobatan penyakit menular.</p>
+       
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- about end   -->
+  <!-- layanan -->
+  <section class="layanan" id="layanan">
+    <div class="content">
+      <div class="title"><span>Layanan Healing Hospital</span></div>
+    <div class="layanan-details">
+      <div class="left">
+          <div class="topic"><b>Layanan Unggulan</b></div>
+
+          <div class="row">
+          <div class="ms col-md-10">
+
+           <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Konsultasi online dengan dokter dari rumah</li>
+            <li class="list-group-item">konsultasi/panggilan dokter ke rumah</li>
+            <li class="list-group-item">Pengobatan penyakit menular</li>
+            <li class="list-group-item">Perawatan pasien lanjut usia/geriatri</li>
+            <li class="list-group-item">Perawatan luka diabetes mellitus</li>
+            <li class="list-group-item">Perawatan pasien pasca operasi atau luka medis lainnya</li>
+            <li class="list-group-item">Pemasangan infus sesuai indikasi medis</li>
+            <li class="list-group-item">Pemasangan infus imun booster</li>
+            <li class="list-group-item">Pemasangan infus skin booster / whitening</li>
+          </ol>
+         </div>
+          <div class="col-md-1">
+          <ol>
+            <img src="/static/img/1.jpeg" alt="">
+          </ol>
+        </div>
+        </div>
+        </div>
+        
+    </div>
+    </div>
+  </section>
+  <!-- layanan end   -->
+  <!-- pricelist -->
+  <div class="menu" id="Menu">
+    <h1>Pricelist<span></span></h1>
+
+    <div class="menu_box">
+        
+        <div class="menu_card">
+
+            <div class="menu_image">
+                <img src="/static/img/online.jpeg">
+            </div>
+
+            <div class="small_card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <div class="menu_info">
+                <h2>Konsultasi Online</h2>
+                <h3>Rp 100.000</h3>
+                <div class="menu_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <a href="#" class="menu_btn">Hubungi kami</a>
+            </div>
+
+        </div> 
+        
+        <div class="menu_card">
+
+            <div class="menu_image">
+                <img src="/static/img/1.jpeg">
+            </div>
+
+            <div class="small_card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <div class="menu_info">
+                <h2>Layanan Medis di Rumah</h2>
+                <h3>Rp 400.000</h3>
+                <div class="menu_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <a href="#" class="menu_btn">Hubungi kami</a>
+            </div>
+
+        </div> 
+
+        <div class="menu_card">
+
+            <div class="menu_image">
+                <img src="/static/img/2.jpg">
+            </div>
+
+            <div class="small_card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <div class="menu_info">
+                <h2>Perawatan Pribadi</h2>
+                <h3>Rp 400.000</h3>
+                <div class="menu_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <a href="#" class="menu_btn">Hubugi kami</a>
+            </div>
+
+        </div> 
+
+    
+
+        <div class="menu_card">
+
+            <div class="menu_image">
+                <img src="/static/img/3.jpg">
+            </div>
+
+            <div class="small_card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <div class="menu_info">
+                <h2>Perawatan Luka</h2>
+                <h3>Rp 400.000</h3>
+                <div class="menu_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <a href="#" class="menu_btn">Hubungi kami</a>
+            </div>
+
+        </div> 
+
+        <div class="menu_card">
+
+            <div class="menu_image">
+                <img src="/static/img/4.jpg">
+            </div>
+
+            <div class="small_card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <div class="menu_info">
+                <h2>Pengobatan penyakit menular</h2>
+                <h3>Rp 750.000</h3>
+                <div class="menu_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <a href="#" class="menu_btn">hubungi kami</a>
+            </div>
+
+        </div> 
+
+       
+
+        
+        </div> 
+    </div>
+</div>
+<!-- pricelist end -->
+<!-- contact -->
+<div class="contact" id="Contact">
+  <h1><span></span>Kontak kami</h1>
+
+  <div class="container">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Alamat</div>
+            <div class="text-one">Jln. Sunan Giri D.K.I. Jakarta - Kec. Pulo Gadung - JAKARTA TIMUR</div>
+          </div>
+          <div class="phone details">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">No. HP</div>
+            <div class="text-one">+6285664664728</div>
+            <div class="text-two">+6283163826482</div>
+          </div>
+          <div class="email details">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-one">healinghospital@gmail.com</div>
+          </div>
+        </div>
+        <div class="right-side">
+        <form action="#">
+          <div class="input-box">
+              <label for="nama">Nama</label>
+              <input type="text" placeholder="masukkan nama">
+          </div>
+          <div class="input-box">
+              <label for="nama">Email</label>
+              <input type="text" placeholder="masukkan email">
+          </div>
+          <div class="input-box message-box">
+              <label for="nama">Pesan</label>
+              <input type="text" placeholder="ketikkan pesan anda">
+          </div>
+          <div class="button">
+            <input type="button" value="Kirim Pesan" >
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- footer -->
+<footer class="bg-primary text-white text-center pb-3 md-5">
+  <p> <a href="" class="text-white fw-bold">@healingospital</a></p>
+</footer>
+<!-- footer end -->
+  </body>
+</html>

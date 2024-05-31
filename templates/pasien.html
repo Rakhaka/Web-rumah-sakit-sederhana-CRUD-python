@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>Dashboard</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+      <div class="container">
+        <h1 class="text text-light">HALAMAN ADMIN</h1>
+    
+        
+      </div>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/dashboard">Dasboard</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- navbar end -->
+    <div class="side-menu">
+      <div class="brand-name">
+        <h1>Brand</h1>
+      </div>
+      <ul>
+        <li><a class="nav-link active text-light" aria-current="page" href="{{ url_for('pasien') }}">Pasien</a></li>
+        <li><a class="nav-link active text-light" aria-current="page" href="{{ url_for('dokter') }}">Dokter</a></li>
+        <li><a class="nav-link active text-light" aria-current="page" href="{{ url_for('admin') }}">Petugas Administrasi</a></li>
+        <li><a class="nav-link active text-light" aria-current="page" href="{{ url_for('perawat') }}">Perawat</a></li>
+        <li><a class="nav-link active text-light" aria-current="page" href="{{ url_for('kamar') }}">Kamar</a></li>
+        <li><a class="nav-link active text-light" aria-current="page" href="{{ url_for('obat') }}">Obat</a></li>
+      </ul>
+    </div>
+
+    <div class="crud">
+      <div class="container-fluid">
+        <h1 class="text-center alert" style="background-color: #89d1f3">Data Pasien</h1>
+
+        <div class="row">
+          <div class="col-sm-1"></div>
+
+          <!-- content goes here -->
+          <div class="col-sm-10">
+           
+              <h2>List Pasien<button class="btn float-right btn-primary " data-toggle="modal" data-target="#myModal">Tambah Pasien</button></h2>
+
+              {%with messages = get_flashed_messages()%} {%if messages%} {% for message in messages %}
+              <div class="alert alert-success alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                {{message}}
+              </div>
+              {%endfor%} {%endif%} {%endwith%}
+
+              <!-- Enter New Student Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-primary" style="align-content: center">Tambah Pasien</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form action="{{ url_for('tambah_pasien')}}" method="POST">
+                        <div class="form-group">
+                          <label>Id</label>
+                          <input type="text" name="id" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Id" />
+                        </div>
+
+                        <div class="form-group">
+                          <label>Nama</label>
+                          <input type="text" name="nama" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama" />
+                        </div>
+                        
+                        <div class="form-group">
+                          <label>Tanggal lahir</label>
+                          <input type="date" name="tgl_lahir" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Tanggal Lahir" />
+                        </div>
+
+                        <div class="form-group">
+                          <label>Jenis Kelamin</label>
+                          <input name="jenis_kelamin" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Jenis Kelamin" />
+                        </div>
+                        <div class="form-group">
+                          <label>Alamat</label>
+                          <input name="alamat" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Alamat" />
+                        </div>
+
+                        <button type="submit" class="btn mb-2" style="background-color: #89d1f3">Save</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- End of Enter New Student Modal -->
+
+              <table class="table table-hover" style="background-color: #89d1f3">
+                <thead>
+                  <tr>
+                    <th scope="col">Id Pasien</th>
+                    <th scope="col">Nama Pasien</th>
+                    <th scope="col">Tanggal Lahir</th>
+                    <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in pasien %}
+                  <tr>
+                    <td>{{row.0}}</td>
+                    <td>{{row.1}}</td>
+                    <td>{{row.2}}</td>
+                    <td>{{row.3}}</td>
+                    <td>{{row.4}}</td>
+                    <td>
+                      <a href="/ubah_pasien/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+                      <a href="/hapus_pasien/{{ row.0 }}" onclick="return confirm('Are Sure Want To Deleted ?')" class="btn btn-danger btn-sm">Hapus</a>
+                    </td>
+                  </tr>
+
+                  <!-- Enter New Student Modal -->
+                  <div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-primary" style="align-content: center">Ubah Pasien</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body">
+                          <form action="{{ url_for('ubah_pasien')}}" method="POST">
+                            <input type="hidden" name="id" value="{{row.0}}" />
+                            <div class="form-group">
+                              <label>Id Pasien</label>
+                              <input value="{{row.0}}" type="text" name="id" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Id" />
+                            </div>
+
+                            <div class="form-group">
+                              <label>Nama Pasien</label>
+                              <input value="{{row.1}}" type="text" name="nama" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama" />
+                            </div>
+
+                            <div class="form-group">
+                              <label>Tanggal Lahir</label>
+                              <input value="{{row.2}}" type="date" name="tgl_lahir" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Tanggal Lahir" />
+                            </div>
+
+                            <div class="form-group">
+                              <label>Jenis Kelamin</label>
+                              <input value="{{row.3}}" name="jenis_kelamin" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Jenis Kelamin" />
+                            </div>
+
+                            <div class="form-group">
+                              <label>Alamat</label>
+                              <input value="{{row.4}}" name="alamat" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Alamat" />
+                            </div>
+                            <button type="submit" class="btn mb-2" style="background-color: #89d1f3">Simpan</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- End of Edit Student Modal -->
+
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <!-- Content ends here-->
+
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{{url_for('static',filename='styless.css')}}" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="/static/styless.css" />
+    <title>Dashboard</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+      <div class="container">
+        <h1 class="text text-light">HALAMAN ADMIN</h1>
+      </div>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/dashboard">Dasboard</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- navbar end -->
+    <div class="login">
+      <form action="{{url_for('log_in')}}" class="mx-auto form-login" method="post" id="login">
+        <h1 class="text text-dark text-center">Login</h1>
+        <div class="mb-3 mt-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" name="username" class="form-control" id="username" required />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="password" required />
+        </div>
+        {%with messages = get_flashed_messages()%} {%if messages%} {%for message in messages%}
+        <div class="alert alert-danger alert-dismissable" role="alert">
+          {{message}}
+          <button type="button" class="close ms-auto" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {%endfor%} {%endif%} {%endwith%}
+        <div>
+          <p>Don't have an account?<a href="{{url_for('signup')}}">SignUp</a></p>
+        </div>
+        <button type="submit" class="btn mt-2 submit-button text-white" value="log_in" style="background-color: #626567">Login</button>
+      </form>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
